@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  --background: #ffffff;
+  --main-background: #ffffff;
+  --text: #111827;
+  --text-secondary: #6b7280;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --border: #e5e7eb;
+
+  /* Card Colors */
+  --card-indigo: #eef2ff;
+  --card-green: #f0fdf4;
+  --card-yellow: #fefce8;
+  --card-gray: #f9fafb;
+  --card-red: #fef2f2;
+}
+
+[data-theme="dark"] {
+  --background: #2f3a48;
+  --main-background: #1f2937;
+  --text: #f9fafb;
+  --text-secondary: #9ca3af;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --border: #374151;
+
+  /* Dark Theme Card Colors */
+  --card-indigo: #1e1b4b;
+  --card-green: #14532d;
+  --card-yellow: #713f12;
+  --card-gray: #111827;
+  --card-red: #7f1d1d;
+}
+
+[data-high-contrast="true"] {
+  --background: #ffff;
+  --text: #000000;
+  --text-secondary: #000000;
+  --primary: #000000;
+  --primary-hover: #000000;
+  --border: #000000;
+
+  /* High Contrast Card Colors */
+  --card-indigo: #000000;
+  --card-green: #000000;
+  --card-yellow: #000000;
+  --card-gray: #000000;
+  --card-red: #000000;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+.dark {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.dark .bg-white {
+  background-color: var(--background-color);
+}
+
+.dark .text-gray-900 {
+  color: var(--text);
+}
+
+.dark .text-gray-500 {
+  color: var(--text-secondary);
+}
+
+/* High Contrast Styles */
+[data-high-contrast="true"] {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+[data-high-contrast="true"] * {
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  background-color: var(--background) !important;
+}
+
+/* Font Size Utilities */
+html {
+  font-size: 16px;
+}
+
+html[data-font-size="small"] {
+  font-size: 14px;
+}
+
+html[data-font-size="large"] {
+  font-size: 18px;
+}
+
+/* Reduced Motion */
+.reduce-motion * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Accessibility Improvements */
+:focus {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+[role="button"],
+button {
+  cursor: pointer;
+}
